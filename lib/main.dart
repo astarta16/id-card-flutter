@@ -59,8 +59,26 @@ class CardMain extends StatelessWidget {
               ),
             ),
               SizedBox(height: 30.0),
+              Row(  
+                children: <Widget>[
+                  Icon( 
+                    Icons.email,
+                    color: Colors.grey,
+                  ),
+                  SizedBox(width:10.0 ),
+                  Text(
+                    "ngedeshuri2001@gmail.com",
+                    style: TextStyle(  
+                      color: Colors.red,
+                      fontSize: 18.0,
+                      letterSpacing: 1.0,
 
-            
+                    ),
+                  ),
+                ],
+              )
+
+
 
           ],
         ),
