@@ -11,10 +11,59 @@ class CardMain extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 63, 62, 62),
       appBar: AppBar(
-        title: Text("Astarta's ID project"),
+        title: Text("ASTARTA's ID"),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 47, 46, 46),
         elevation: 0.0,
+      ),
+      body: Padding( 
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column( 
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget> [
+            Text( 
+              "NAME",
+              style: TextStyle(  
+                color: Colors.grey,
+                letterSpacing: 2.0,
+                fontSize: 30.0,
+              ),
+            ),
+            SizedBox(height: 12.0),
+             Text( 
+              "Nini Gedeshuri",
+              style: TextStyle(  
+                color: Colors.red,
+                letterSpacing: 2.0,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            SizedBox(height: 30.0),
+             Text( 
+              "Developer",
+              style: TextStyle(  
+                color: Colors.grey,
+                letterSpacing: 2.0,
+                fontSize: 30.0,
+              ),
+            ),
+            SizedBox(height: 12.0),
+             Text( 
+              "1.5 Years experience",
+              style: TextStyle(  
+                color: Colors.red,
+                letterSpacing: 2.0,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+              SizedBox(height: 30.0),
+
+            
+
+          ],
+        ),
       ),
     );
   }
