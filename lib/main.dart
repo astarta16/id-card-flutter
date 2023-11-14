@@ -8,86 +8,75 @@ class CardMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 63, 62, 62),
+      backgroundColor: Color(0xFF3F3E3E),
       appBar: AppBar(
         title: Text("ASTARTA's ID"),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 47, 46, 46),
+        backgroundColor: Color(0xFF2F2E2E),
         elevation: 0.0,
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Center(
-              child: CircleAvatar(
-                radius: 80.0,
-                backgroundColor: Colors.grey,
-                backgroundImage: NetworkImage(
-                  'https://scontent.ftbs2-2.fna.fbcdn.net/v/t39.30808-6/225560109_1074175199776219_8123171032433289508_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=T6WD_KZvq04AX8vn4J5&_nc_ht=scontent.ftbs2-2.fna&oh=00_AfAIn7nYf-U57NQN_V0DmBSS_4Y8qwnvTxR4U3WLEJVUvw&oe=6558DD53',
-                ),
-              ),
+            _buildProfileImage(
+              'https://scontent.ftbs2-2.fna.fbcdn.net/v/t39.30808-6/225560109_1074175199776219_8123171032433289508_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=T6WD_KZvq04AX8vn4J5&_nc_ht=scontent.ftbs2-2.fna&oh=00_AfAIn7nYf-U57NQN_V0DmBSS_4Y8qwnvTxR4U3WLEJVUvw&oe=6558DD53',
             ),
             SizedBox(height: 12.0),
-            Text(
-              "NAME",
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-                fontSize: 30.0,
-              ),
-            ),
+            _buildInfoText("NAME", Colors.grey, 30.0),
             SizedBox(height: 12.0),
-            Text(
-              "Nini Gedeshuri",
-              style: TextStyle(
-                color: Colors.red,
-                letterSpacing: 2.0,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            _buildInfoText("Nini Gedeshuri", Colors.red, 20.0, true),
             SizedBox(height: 30.0),
-            Text(
-              "Developer",
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2.0,
-                fontSize: 30.0,
-              ),
-            ),
+            _buildInfoText("Developer", Colors.grey, 30.0),
             SizedBox(height: 12.0),
-            Text(
-              "1.5 Years experience",
-              style: TextStyle(
-                color: Colors.red,
-                letterSpacing: 2.0,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            _buildInfoText("1.5 Years experience", Colors.red, 20.0, true),
             SizedBox(height: 30.0),
-            Row(
-              children: <Widget>[
-                Icon(
-                  Icons.email,
-                  color: Colors.grey,
-                ),
-                SizedBox(width: 10.0),
-                Text(
-                  "ngedeshuri2001@gmail.com",
-                  style: TextStyle(
-                    color: Colors.red,
-                    fontSize: 18.0,
-                    letterSpacing: 1.0,
-                  ),
-                ),
-              ],
-            ),
+            _buildContactRow(Icons.email, "ngedeshuri2001@gmail.com", Colors.grey, 18.0),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildProfileImage(String imageUrl) {
+    return FadeInImage(
+      placeholder: AssetImage('assets/nini.jpg'), 
+      image: NetworkImage(imageUrl),
+      fit: BoxFit.cover,
+    );
+  }
+
+  Widget _buildInfoText(String text, Color color, double fontSize, [bool bold = false]) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: color,
+        letterSpacing: 2.0,
+        fontSize: fontSize,
+        fontWeight: bold ? FontWeight.bold : FontWeight.normal,
+      ),
+    );
+  }
+
+  Widget _buildContactRow(IconData icon, String text, Color color, double fontSize) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          icon,
+          color: Colors.grey,
+        ),
+        SizedBox(width: 10.0),
+        Text(
+          text,
+          style: TextStyle(
+            color: color,
+            fontSize: fontSize,
+            letterSpacing: 1.0,
+          ),
+        ),
+      ],
     );
   }
 }
