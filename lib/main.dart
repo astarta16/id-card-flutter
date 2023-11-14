@@ -4,7 +4,14 @@ void main() => runApp(MaterialApp(
       home: CardMain(),
     ));
 
-class CardMain extends StatelessWidget {
+class CardMain extends StatefulWidget {
+  @override
+  State<CardMain> createState() => _CardMainState();
+}
+
+class _CardMainState extends State<CardMain> {
+  int experienceYear = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +21,15 @@ class CardMain extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Color(0xFF2F2E2E),
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            experienceYear += 1;
+          });
+        },
+        child: Icon(Icons.add),
+        backgroundColor: const Color.fromARGB(255, 34, 33, 33),
       ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
@@ -28,11 +44,12 @@ class CardMain extends StatelessWidget {
             SizedBox(height: 12.0),
             _buildInfoText("Nini Gedeshuri", Colors.red, 20.0, true),
             SizedBox(height: 30.0),
-            _buildInfoText("Developer", Colors.grey, 30.0),
+            _buildInfoText("Rate Developer", Colors.grey, 30.0),
             SizedBox(height: 12.0),
-            _buildInfoText("1.5 Years experience", Colors.red, 20.0, true),
+            _buildInfoText("$experienceYear", Colors.red, 20.0, true),
             SizedBox(height: 30.0),
-            _buildContactRow(Icons.email, "ngedeshuri2001@gmail.com", Colors.grey, 18.0),
+            _buildContactRow(
+                Icons.email, "ngedeshuri2001@gmail.com", Colors.grey, 18.0),
           ],
         ),
       ),
@@ -41,13 +58,14 @@ class CardMain extends StatelessWidget {
 
   Widget _buildProfileImage(String imageUrl) {
     return FadeInImage(
-      placeholder: AssetImage('assets/nini.jpg'), 
+      placeholder: AssetImage('assets/nini.jpg'),
       image: NetworkImage(imageUrl),
       fit: BoxFit.cover,
     );
   }
 
-  Widget _buildInfoText(String text, Color color, double fontSize, [bool bold = false]) {
+  Widget _buildInfoText(String text, Color color, double fontSize,
+      [bool bold = false]) {
     return Text(
       text,
       style: TextStyle(
@@ -59,7 +77,8 @@ class CardMain extends StatelessWidget {
     );
   }
 
-  Widget _buildContactRow(IconData icon, String text, Color color, double fontSize) {
+  Widget _buildContactRow(
+      IconData icon, String text, Color color, double fontSize) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
