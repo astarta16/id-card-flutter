@@ -40,7 +40,7 @@ class _CardMainState extends State<CardMain> {
               'https://scontent.ftbs2-2.fna.fbcdn.net/v/t39.30808-6/225560109_1074175199776219_8123171032433289508_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_ohc=T6WD_KZvq04AX8vn4J5&_nc_ht=scontent.ftbs2-2.fna&oh=00_AfAIn7nYf-U57NQN_V0DmBSS_4Y8qwnvTxR4U3WLEJVUvw&oe=6558DD53',
             ),
             SizedBox(height: 12.0),
-            _buildInfoText("NAME", Colors.grey, 30.0),
+            _buildInfoText("YOUR NAME", Colors.grey, 30.0),
             SizedBox(height: 12.0),
             _buildInfoText("Nini Gedeshuri", Colors.red, 20.0, true),
             SizedBox(height: 30.0),
