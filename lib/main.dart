@@ -42,7 +42,7 @@ class _CardMainState extends State<CardMain> {
             SizedBox(height: 12.0),
             _buildInfoText("YOUR NAME", Colors.grey, 30.0),
             SizedBox(height: 12.0),
-            _buildInfoText("Nini Gedeshuri", Colors.red, 20.0, true),
+            _buildInfoText("Nini Gedeshuri-astarta", Colors.red, 20.0, true),
             SizedBox(height: 30.0),
             _buildInfoText("Rate Developer skill", Colors.grey, 30.0),
             SizedBox(height: 12.0),
