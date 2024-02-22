@@ -32,7 +32,7 @@ class _CardMainState extends State<CardMain> {
         backgroundColor: const Color.fromARGB(255, 34, 33, 33),
       ),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(32.0, 40.0, 30.0, 0.0),
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
