@@ -49,7 +49,7 @@ class _CardMainState extends State<CardMain> {
             _buildInfoText("$experienceYear", Colors.red, 20.0, true),
             SizedBox(height: 30.0),
             _buildContactRow(
-                Icons.email, "ngedeshuri2001@gmail.com", Colors.grey, 18.0),
+                Icons.email, "", Colors.grey, 18.0),
           ],
         ),
       ),
