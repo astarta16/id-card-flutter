@@ -17,7 +17,7 @@ class _CardMainState extends State<CardMain> {
     return Scaffold(
       backgroundColor: Color(0xFF3F3E3E),
       appBar: AppBar(
-        title: Text("ASTARTA'is id"),
+        title: Text("ASTARTA's Id Card"),
         centerTitle: true,
         backgroundColor: Color(0xFF2F2E2E),
         elevation: 0.0,
